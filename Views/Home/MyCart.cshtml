@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "Cart Details";
+}
+
+<style>
+    #MyCartTable th, #MyCartTable td {
+        white-space: nowrap;
+    }
+</style>
+
+<h2 style="text-align: center;">Cart Details</h2>
+
+<div id="MyCartDiv">
+    <div class="row" id="MyCartTable" style="overflow:auto;">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Name</th>
+                    <th>Qty</th>
+                    <th>Unit Price</th>
+                    <th>Total</th>
+                    <th>Edit / Delete</th>
+                </tr>
+            </thead>
+            <tbody id="MyCartTblBody">
+            </tbody>
+            <tfoot>
+            </tfoot>
+        </table>
+    </div>
+
+    <div class="row">
+        <button class="btn btn-primary" onclick="window.location.href='/home/categorylist'">Continue Shoping </button>
+    </div>
+</div>
+
+
+<div class="modal fade" id="AddQtyErrorModal" tabindex="-1" role="dialog" aria-labelledby="AddQtyErrorModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <span>Quantity should not be 0</span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="~/Scripts/MyScripts/MyCart/MyCart.js"></script>

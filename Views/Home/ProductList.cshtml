@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "ProductList";
+    int CateGoryID = @ViewBag.CateGoryID;
+}
+
+<style>
+    #ProductList img {
+        max-width: 300px;
+    }
+</style>
+
+<script>
+    var CateGoryID = parseInt("@CateGoryID");
+</script>
+
+<h2 style="text-align: center;">Product List</h2>
+
+<div id="ProductList" class="col-sm-12">
+
+</div>
+
+<div class="modal fade" id="quantityModal" tabindex="-1" role="dialog" aria-labelledby="quantityModal" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Enter Quantity</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input id="CartQty" class="form-control" type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" />
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" addcart-product-id class="btn btn-warning">Add To Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="AddQtyErrorModal" tabindex="-1" role="dialog" aria-labelledby="AddQtyErrorModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <span>Please Enter Some Quantity To AddCart</span>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/MyScripts/ProductList/ProductList.js"></script>
